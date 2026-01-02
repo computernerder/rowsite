@@ -1,0 +1,732 @@
+[
+  {
+    "id": "CHAR-001",
+    "character_name": "Elara Brightwood",
+    "player": "Sample Character",
+    "profession": "priest",
+    "primary_path": "divine",
+    "race": "elf",
+    "ancestry": "sylari",
+    "background": "devotee",
+
+    "level": 1,
+    "total_experience": 0,
+    "stored_advance": "",
+
+    "ability_scores": {
+      "Might":     { "mod": -1, "saving_throw": -1, "total": 8, "roll": 8, "race": 0, "misc": 0 },
+      "Agility":   { "mod": 1, "saving_throw": 1, "total": 12, "roll": 12, "race": 0, "misc": 0 },
+      "Endurance": { "mod": 1, "saving_throw": 1, "total": 13, "roll": 13, "race": 0, "misc": 0 },
+      "Wisdom":    { "mod": 4, "saving_throw": 4, "total": 18, "roll": 15, "race": 2, "misc": 1 },
+      "Intellect": { "mod": 2, "saving_throw": 2, "total": 15, "roll": 14, "race": 1, "misc": 0 },
+      "Charisma":  { "mod": 3, "saving_throw": 3, "total": 16, "roll": 10, "race": 0, "misc": 6 }
+    },
+
+    "defense": {
+      "base": 9,
+      "agility": 1,
+      "shield": "",
+      "misc": 0,
+      "total": 10
+    },
+    "speed": 30,
+    "initiative": 1,
+
+    "health": { "max": 7, "current": 7, "wounds": 0 },
+    "armor_hp": { "max": 0, "current": 0 },
+    "life_points": { "max": 12, "current": 12 },
+    "focus": { "max": 0, "current": 0 },
+
+    "passive": {
+      "perception": { "base": 10, "skill": 4, "misc": 0, "total": 14 },
+      "insight": { "base": 10, "skill": 3, "misc": 0, "total": 13 }
+    },
+
+    "attack_mods": {
+      "melee": { "attr": -1, "misc": 0, "total": -1 },
+      "ranged": { "attr": 1, "misc": 0, "total": 1 }
+    },
+
+    "skills": {
+      "Acrobatics": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Animal Handling": { "trained": false, "mod": 4, "rank": 0, "misc": 0, "total": 4 },
+      "Appraisal": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "Arcana": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "Athletics": { "trained": false, "mod": -1, "rank": 0, "misc": 0, "total": -1 },
+      "Crafting": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "Deception": { "trained": false, "mod": 3, "rank": 0, "misc": 0, "total": 3 },
+      "Diplomacy": { "trained": true, "mod": 3, "rank": 1, "misc": 0, "total": 4 },
+      "History": { "trained": true, "mod": 2, "rank": 1, "misc": 0, "total": 3 },
+      "Insight": { "trained": true, "mod": 2, "rank": 1, "misc": 0, "total": 3 },
+      "Intimidation": { "trained": false, "mod": 3, "rank": 0, "misc": 0, "total": 3 },
+      "Investigation": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "Medicine": { "trained": true, "mod": 2, "rank": 1, "misc": 0, "total": 3 },
+      "Nature": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "Perception": { "trained": false, "mod": 4, "rank": 0, "misc": 0, "total": 4 },
+      "Performance": { "trained": false, "mod": 3, "rank": 0, "misc": 0, "total": 3 },
+      "Persuasion": { "trained": false, "mod": 3, "rank": 0, "misc": 0, "total": 3 },
+      "Religion": { "trained": true, "mod": 2, "rank": 1, "misc": 0, "total": 3 },
+      "Sleight of Hand": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Stealth": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Streetwise": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "Survival": { "trained": false, "mod": 4, "rank": 0, "misc": 0, "total": 4 },
+      "Taming": { "trained": false, "mod": 4, "rank": 0, "misc": 0, "total": 4 }
+    },
+
+    "proficiencies": ["Simple Weapons"],
+    "languages": ["Common", "Elvish", "Sylvan", "Celestial", "Dwarvish"],
+
+    "attacks": [
+      { "attack_action": "Quarterstaff", "bonus": -1, "damage": "1d6-1", "type": "bludgeoning", "range": "5 ft" }
+    ],
+
+    "talents": [
+      { "name": "Divinity (Rank 1)", "text": "Channel conviction as an Action, releasing a wave of inner light in a 10-foot radius. Allies in range regain 1d6 HP; enemies of opposed alignment take 1d6 radiant damage." },
+      { "name": "Enlightened (Rank 1)", "text": "Gain advantage on Insight and Perception checks against deceitful or disguised entities." },
+      { "name": "Faith's Guard (Rank 1)", "text": "When you or an ally within 10 feet takes damage, use Reaction to reduce damage by 1d6." },
+      { "name": "Conviction Aura (Rank 1)", "text": "Allies within 20 feet gain +1 to saving throws." }
+    ],
+    "features": [
+      { "name": "Fey Ancestry", "text": "Advantage on saving throws against being charmed; immune to magical sleep." },
+      { "name": "Darkvision", "text": "See in dim light within 60 feet as if bright light, and darkness as dim light." },
+      { "name": "Life Bond", "text": "Once per long rest, heal yourself or an ally for 2d6." },
+      { "name": "Channel Conviction", "text": "When you strike with a melee attack or cast a divine ability, add +1 radiant damage." },
+      { "name": "Sanctified Will", "text": "Advantage on saving throws against fear and charm effects." },
+      { "name": "Light of Resolve", "text": "Once per short rest, as a Bonus Action, you and allies within 10 ft gain +1 Defense until start of your next turn." },
+      { "name": "Shelter of the Faithful", "text": "You command respect of those who share your faith and can perform religious ceremonies." },
+      { "name": "Diocese Ties", "text": "You may request simple lodging, healing herbs, or access to temple archives." }
+    ],
+
+    "spellcrafting": {
+      "save_dc": 0,
+      "attack_bonus": 0,
+      "crafting_points": { "max": 0 },
+      "casting": "",
+      "spells": []
+    },
+
+    "inventory": {
+      "items": ["Holy Symbol", "Travel Robes", "Medical Pouch", "Candle x3", "Blank Book", "Ink Pen", "Waterskin"],
+      "total_weight": "8 lb"
+    },
+
+    "notes": "Elara left her forest grove to spread the teachings of the nature spirits to the outside world. She believes all living things deserve compassion and healing.",
+    "physical_traits": {
+      "height": "5'8\"",
+      "weight": "125 lb",
+      "size": "Medium",
+      "age": "127",
+      "creature_type": "Humanoid (Elf)",
+      "eyes": "Silver",
+      "skin": "Pale green",
+      "hair": "Moss green, long"
+    },
+    "personality": {
+      "traits": "I am patient and calm even in chaos.",
+      "ideal": "Charity. I must help those in need. (+1 Morality, +2 Rep)",
+      "bond": "My temple is my family. (+1 Morality, +1 Rep)",
+      "flaw": "I secretly doubt my gods. (0 Morality, -1 Rep)"
+    },
+    "alignment": { "alignment": "Good", "mod": 2 },
+    "reputation": { "reputation": "Respected", "mod": 3 },
+
+    "qr_payload": "",
+    "footer": {
+      "datecode": "2025-01-02",
+      "config": "RoW v2.0.1",
+      "id": "CHAR-001"
+    }
+  },
+
+  {
+    "id": "CHAR-002",
+    "character_name": "Grimjaw Ironhide",
+    "player": "Sample Character",
+    "profession": "warrior",
+    "primary_path": "power",
+    "race": "taurin",
+    "ancestry": "stonegrave",
+    "background": "mercenary",
+
+    "level": 5,
+    "total_experience": 7000,
+    "stored_advance": "",
+
+    "ability_scores": {
+      "Might":     { "mod": 5, "saving_throw": 5, "total": 20, "roll": 15, "race": 3, "misc": 2 },
+      "Agility":   { "mod": 1, "saving_throw": 1, "total": 12, "roll": 12, "race": 0, "misc": 0 },
+      "Endurance": { "mod": 4, "saving_throw": 4, "total": 18, "roll": 14, "race": 4, "misc": 0 },
+      "Wisdom":    { "mod": 0, "saving_throw": 0, "total": 10, "roll": 10, "race": 0, "misc": 0 },
+      "Intellect": { "mod": -1, "saving_throw": -1, "total": 8, "roll": 8, "race": 0, "misc": 0 },
+      "Charisma":  { "mod": 0, "saving_throw": 0, "total": 11, "roll": 13, "race": -2, "misc": 0 }
+    },
+
+    "defense": {
+      "base": 9,
+      "agility": 1,
+      "shield": 2,
+      "misc": 0,
+      "total": 12
+    },
+    "speed": 30,
+    "initiative": 1,
+
+    "health": { "max": 24, "current": 24, "wounds": 0 },
+    "armor_hp": { "max": 18, "current": 18 },
+    "life_points": { "max": 18, "current": 18 },
+    "focus": { "max": 0, "current": 0 },
+
+    "passive": {
+      "perception": { "base": 10, "skill": 2, "misc": 2, "total": 14 },
+      "insight": { "base": 10, "skill": -1, "misc": 0, "total": 9 }
+    },
+
+    "attack_mods": {
+      "melee": { "attr": 5, "misc": 2, "total": 7 },
+      "ranged": { "attr": 1, "misc": 0, "total": 1 }
+    },
+
+    "skills": {
+      "Acrobatics": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Animal Handling": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Appraisal": { "trained": false, "mod": -1, "rank": 0, "misc": 0, "total": -1 },
+      "Arcana": { "trained": false, "mod": -1, "rank": 0, "misc": 0, "total": -1 },
+      "Athletics": { "trained": true, "mod": 5, "rank": 3, "misc": 0, "total": 8 },
+      "Crafting": { "trained": false, "mod": -1, "rank": 0, "misc": 0, "total": -1 },
+      "Deception": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Diplomacy": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "History": { "trained": false, "mod": -1, "rank": 0, "misc": 0, "total": -1 },
+      "Insight": { "trained": false, "mod": -1, "rank": 0, "misc": 0, "total": -1 },
+      "Intimidation": { "trained": true, "mod": 0, "rank": 3, "misc": 0, "total": 3 },
+      "Investigation": { "trained": false, "mod": -1, "rank": 0, "misc": 0, "total": -1 },
+      "Medicine": { "trained": false, "mod": -1, "rank": 0, "misc": 0, "total": -1 },
+      "Nature": { "trained": false, "mod": -1, "rank": 0, "misc": 0, "total": -1 },
+      "Perception": { "trained": true, "mod": 0, "rank": 2, "misc": 2, "total": 4 },
+      "Performance": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Persuasion": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Religion": { "trained": false, "mod": -1, "rank": 0, "misc": 0, "total": -1 },
+      "Sleight of Hand": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Stealth": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Streetwise": { "trained": false, "mod": -1, "rank": 0, "misc": 0, "total": -1 },
+      "Survival": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Taming": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 }
+    },
+
+    "proficiencies": ["Light Armor", "Medium Armor", "Heavy Armor", "Simple Weapons", "Martial Weapons", "Shields"],
+    "languages": ["Common", "Tauric", "Orcish"],
+
+    "attacks": [
+      { "attack_action": "Greataxe", "bonus": 7, "damage": "1d12+5", "type": "slashing", "range": "5 ft" },
+      { "attack_action": "Greataxe (Raging)", "bonus": 7, "damage": "1d12+8", "type": "slashing", "range": "5 ft" },
+      { "attack_action": "Horn Attack", "bonus": 7, "damage": "1d6+5", "type": "piercing", "range": "5 ft" },
+      { "attack_action": "Handaxe (thrown)", "bonus": 1, "damage": "1d6+1", "type": "slashing", "range": "20/60 ft" }
+    ],
+
+    "talents": [
+      { "name": "Rage (Rank 5)", "text": "As Bonus Action, enter rage for 1 minute. Advantage on Might checks/saves, +3 melee damage, resistance to bludgeoning/piercing/slashing. Can't cast spells while raging." },
+      { "name": "Brutal Strike (Rank 2)", "text": "Critical hits roll one additional damage die. Crits on 19-20. On crit, knock target prone or push 10 ft." },
+      { "name": "Primal Armor (Rank 2)", "text": "While not wearing armor, Armor HP = Endurance score (18). Resistance to bludgeoning, piercing, slashing while raging." },
+      { "name": "Reckless Tactics (Rank 1)", "text": "When you attack, gain advantage on all melee attacks until next turn. Attacks against you also have advantage." },
+      { "name": "Toughness (Rank 1)", "text": "+5 HP, +1 Life Point." }
+    ],
+    "features": [
+      { "name": "Primal Senses", "text": "Proficient with advantage on Perception checks." },
+      { "name": "Horn Attack", "text": "Proficient with horns. Unarmed attack dealing 1d6 + Might mod piercing damage." },
+      { "name": "Immovable", "text": "Advantage on checks/saves to resist being shoved or knocked prone." },
+      { "name": "Stonehide", "text": "Add Endurance modifier as temporary HP. Regain after short rest." },
+      { "name": "Adrenal Surge", "text": "When you roll natural 20 on Might check or melee attack, gain temp HP equal to Might modifier." },
+      { "name": "Relentless Drive", "text": "When attack reduces you below half HP, make reaction attack to enemy within 5 ft." },
+      { "name": "Furious Momentum", "text": "When you reduce creature to 0 LP, move up to 10 ft without provoking opportunity attacks." },
+      { "name": "Soldier's Network", "text": "Ties to local fighters, guards, and mercenaries who offer shelter, news, or introductions." },
+      { "name": "Mercenary Company", "text": "Former comrades recognize you, offering news, shelter, or work." },
+      { "name": "Extra Attack", "text": "You can attack twice when you take the Attack action." }
+    ],
+
+    "spellcrafting": {
+      "save_dc": 0,
+      "attack_bonus": 0,
+      "crafting_points": { "max": 0 },
+      "casting": "",
+      "spells": []
+    },
+
+    "inventory": {
+      "items": ["Greataxe", "Handaxe x2", "Chain Mail", "Shield", "Old Weapon (sentimental)", "Mercenary Contract", "Traveler's Clothes", "Backpack", "Bedroll", "Rations x5"],
+      "total_weight": "85 lb"
+    },
+
+    "notes": "Grimjaw left his mountain bastion after a rival clan destroyed his hold. He now fights for coin, seeking enough gold to rebuild his ancestral fortress.",
+    "physical_traits": {
+      "height": "7'2\"",
+      "weight": "380 lb",
+      "size": "Medium",
+      "age": "34",
+      "creature_type": "Humanoid",
+      "eyes": "Deep red",
+      "skin": "Gray, stone-like texture",
+      "hair": "Black mane"
+    },
+    "personality": {
+      "traits": "I never refuse a meal or drink. I brag about my deeds, even small ones.",
+      "ideal": "Glory. I crave recognition. (0 Morality, 0 Rep)",
+      "bond": "I owe a debt to the one who trained me. (0 Morality, +1 Rep)",
+      "flaw": "I never back down from a fight. (0 Morality, -1 Rep)"
+    },
+    "alignment": { "alignment": "True Neutral", "mod": 0 },
+    "reputation": { "reputation": "Unknown", "mod": 0 },
+
+    "qr_payload": "",
+    "footer": {
+      "datecode": "2025-01-02",
+      "config": "RoW v2.0.1",
+      "id": "CHAR-002"
+    }
+  },
+
+  {
+    "id": "CHAR-003",
+    "character_name": "Whisper",
+    "player": "Sample Character",
+    "profession": "criminal",
+    "primary_path": "exploitation",
+    "race": "goblin",
+    "ancestry": "citykin",
+    "background": "shadow",
+
+    "level": 10,
+    "total_experience": 34000,
+    "stored_advance": "",
+
+    "ability_scores": {
+      "Might":     { "mod": 0, "saving_throw": 0, "total": 10, "roll": 10, "race": 0, "misc": 0 },
+      "Agility":   { "mod": 6, "saving_throw": 6, "total": 22, "roll": 15, "race": 3, "misc": 4 },
+      "Endurance": { "mod": 1, "saving_throw": 1, "total": 12, "roll": 12, "race": 0, "misc": 0 },
+      "Wisdom":    { "mod": 1, "saving_throw": 1, "total": 13, "roll": 13, "race": 0, "misc": 0 },
+      "Intellect": { "mod": 4, "saving_throw": 4, "total": 18, "roll": 14, "race": 2, "misc": 2 },
+      "Charisma":  { "mod": 2, "saving_throw": 2, "total": 15, "roll": 14, "race": 1, "misc": 0 }
+    },
+
+    "defense": {
+      "base": 9,
+      "agility": 6,
+      "shield": 0,
+      "misc": 2,
+      "total": 17
+    },
+    "speed": 30,
+    "initiative": 8,
+
+    "health": { "max": 38, "current": 38, "wounds": 0 },
+    "armor_hp": { "max": 12, "current": 12 },
+    "life_points": { "max": 12, "current": 12 },
+    "focus": { "max": 0, "current": 0 },
+
+    "passive": {
+      "perception": { "base": 10, "skill": 5, "misc": 0, "total": 15 },
+      "insight": { "base": 10, "skill": 6, "misc": 0, "total": 16 }
+    },
+
+    "attack_mods": {
+      "melee": { "attr": 6, "misc": 2, "total": 8 },
+      "ranged": { "attr": 6, "misc": 3, "total": 9 }
+    },
+
+    "skills": {
+      "Acrobatics": { "trained": true, "mod": 6, "rank": 4, "misc": 0, "total": 10 },
+      "Animal Handling": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Appraisal": { "trained": false, "mod": 4, "rank": 0, "misc": 0, "total": 4 },
+      "Arcana": { "trained": false, "mod": 4, "rank": 0, "misc": 0, "total": 4 },
+      "Athletics": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Crafting": { "trained": false, "mod": 4, "rank": 0, "misc": 0, "total": 4 },
+      "Deception": { "trained": true, "mod": 2, "rank": 5, "misc": 0, "total": 7 },
+      "Diplomacy": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "History": { "trained": false, "mod": 4, "rank": 0, "misc": 0, "total": 4 },
+      "Insight": { "trained": true, "mod": 4, "rank": 2, "misc": 0, "total": 6 },
+      "Intimidation": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "Investigation": { "trained": true, "mod": 4, "rank": 4, "misc": 0, "total": 8 },
+      "Medicine": { "trained": false, "mod": 4, "rank": 0, "misc": 0, "total": 4 },
+      "Nature": { "trained": false, "mod": 4, "rank": 0, "misc": 0, "total": 4 },
+      "Perception": { "trained": true, "mod": 1, "rank": 4, "misc": 0, "total": 5 },
+      "Performance": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "Persuasion": { "trained": true, "mod": 2, "rank": 2, "misc": 2, "total": 6 },
+      "Religion": { "trained": false, "mod": 4, "rank": 0, "misc": 0, "total": 4 },
+      "Sleight of Hand": { "trained": true, "mod": 6, "rank": 5, "misc": 0, "total": 11 },
+      "Stealth": { "trained": true, "mod": 6, "rank": 6, "misc": 0, "total": 12 },
+      "Streetwise": { "trained": true, "mod": 4, "rank": 4, "misc": 0, "total": 8 },
+      "Survival": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Taming": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 }
+    },
+
+    "proficiencies": ["Light Armor", "Simple Weapons", "Light Weapons", "Thieves' Tools", "Disguise Kit"],
+    "languages": ["Common", "Goblin", "Thieves' Cant", "Elvish"],
+
+    "attacks": [
+      { "attack_action": "Shortsword", "bonus": 8, "damage": "1d6+6", "type": "piercing", "range": "5 ft" },
+      { "attack_action": "Shortsword (Sneak Attack)", "bonus": 8, "damage": "1d6+6+5d6", "type": "piercing", "range": "5 ft" },
+      { "attack_action": "Dagger (thrown)", "bonus": 9, "damage": "1d4+6", "type": "piercing", "range": "20/60 ft" },
+      { "attack_action": "Hand Crossbow", "bonus": 9, "damage": "1d6+6", "type": "piercing", "range": "30/120 ft" }
+    ],
+
+    "talents": [
+      { "name": "Sneak Attack (Rank 5)", "text": "Once per turn, when attacking with advantage or ally within 5 ft of target, deal +5d6 precision damage with finesse or ranged weapon." },
+      { "name": "Cunning Action (Rank 3)", "text": "Bonus Action to Dash, Hide, Disengage, Sleight of Hand, or Use Object. After using, gain +1 Defense until start of next turn." },
+      { "name": "Infiltration (Rank 2)", "text": "Advantage on Deception and Stealth for false identities. Create convincing documents. 7 days to learn a persona." },
+      { "name": "Steady Aim (Rank 2)", "text": "If you haven't moved, gain advantage on next attack. If both dice hit, deal +1d8 precision damage. +1 Ranged Attack Bonus." },
+      { "name": "Uncanny Dodge (Rank 2)", "text": "When visible enemy hits, use Reaction to halve damage. Also halve nonmagical area damage." },
+      { "name": "Reliable Exploitation (Rank 2)", "text": "On proficient skill checks, treat rolls of 9 or lower as 10. +1 to saves vs Deception/Insight targeting you." },
+      { "name": "Alertness (Rank 2)", "text": "+2 Initiative and passive Perception. Cannot be surprised while conscious." }
+    ],
+    "features": [
+      { "name": "Darkvision", "text": "See in dim light within 60 feet as if bright light." },
+      { "name": "Nimble Escape", "text": "Take Disengage or Hide action as bonus action." },
+      { "name": "Silver Tongue", "text": "Proficient with advantage on Persuasion checks." },
+      { "name": "Exploit Weakness", "text": "Once per turn, +1d4 precision damage when attacking creature another ally has engaged within 5 ft." },
+      { "name": "Evasive Footwork", "text": "+1 Defense against ranged attacks if you moved at least 10 ft on your turn." },
+      { "name": "Shadow Step", "text": "Once per short rest, when lightly obscured, move up to 15 ft without provoking opportunity attacks." },
+      { "name": "Underworld Contact", "text": "Reliable link to local smugglers or fixers who can move items, spread rumors, or provide safe hideouts." },
+      { "name": "Silent Network", "text": "Contacts in the underworld pass along rumors and aid." }
+    ],
+
+    "spellcrafting": {
+      "save_dc": 0,
+      "attack_bonus": 0,
+      "crafting_points": { "max": 0 },
+      "casting": "",
+      "spells": []
+    },
+
+    "inventory": {
+      "items": ["Shortsword x2", "Dagger x4", "Hand Crossbow", "Bolts x20", "Studded Leather Armor", "Thieves' Tools", "Disguise Kit", "Concealed Dagger", "Dark Clothes", "Hooded Cloak", "Silk Rope 50ft", "Grappling Hook", "Smoke Bombs x3"],
+      "total_weight": "32 lb"
+    },
+
+    "notes": "Whisper rose from street urchin to one of the most sought-after information brokers in Vaskra. They say no secret is safe when Whisper is in the city.",
+    "physical_traits": {
+      "height": "3'4\"",
+      "weight": "42 lb",
+      "size": "Small",
+      "age": "23",
+      "creature_type": "Humanoid (Goblin)",
+      "eyes": "Yellow, slitted",
+      "skin": "Dusty green",
+      "hair": "None"
+    },
+    "personality": {
+      "traits": "I speak in riddles and half-truths. I always watch for escape routes.",
+      "ideal": "Freedom. No one should be chained. (+1 Morality, +1 Rep)",
+      "bond": "I owe my life to a mentor who saved me from the streets. (+1 Morality, +1 Rep)",
+      "flaw": "I lie often, even needlessly. (-1 Morality, -1 Rep)"
+    },
+    "alignment": { "alignment": "Neutral Good", "mod": 1 },
+    "reputation": { "reputation": "Respected", "mod": 1 },
+
+    "qr_payload": "",
+    "footer": {
+      "datecode": "2025-01-02",
+      "config": "RoW v2.0.1",
+      "id": "CHAR-003"
+    }
+  },
+
+  {
+    "id": "CHAR-004",
+    "character_name": "Valdris Stormweaver",
+    "player": "Sample Character",
+    "profession": "scholar",
+    "primary_path": "mystic",
+    "race": "human",
+    "ancestry": "velari",
+    "background": "scholar",
+
+    "level": 15,
+    "total_experience": 120000,
+    "stored_advance": "",
+
+    "ability_scores": {
+      "Might":     { "mod": 0, "saving_throw": 0, "total": 10, "roll": 10, "race": 0, "misc": 0 },
+      "Agility":   { "mod": 2, "saving_throw": 2, "total": 14, "roll": 14, "race": 0, "misc": 0 },
+      "Endurance": { "mod": 2, "saving_throw": 2, "total": 14, "roll": 13, "race": 1, "misc": 0 },
+      "Wisdom":    { "mod": 5, "saving_throw": 5, "total": 20, "roll": 15, "race": 3, "misc": 2 },
+      "Intellect": { "mod": 7, "saving_throw": 7, "total": 24, "roll": 15, "race": 5, "misc": 4 },
+      "Charisma":  { "mod": 0, "saving_throw": 0, "total": 11, "roll": 12, "race": -1, "misc": 0 }
+    },
+
+    "defense": {
+      "base": 9,
+      "agility": 2,
+      "shield": 0,
+      "misc": 4,
+      "total": 15
+    },
+    "speed": 30,
+    "initiative": 4,
+
+    "health": { "max": 50, "current": 50, "wounds": 0 },
+    "armor_hp": { "max": 0, "current": 0 },
+    "life_points": { "max": 14, "current": 14 },
+    "focus": { "max": 22, "current": 22 },
+
+    "passive": {
+      "perception": { "base": 10, "skill": 5, "misc": 0, "total": 15 },
+      "insight": { "base": 10, "skill": 9, "misc": 0, "total": 19 }
+    },
+
+    "attack_mods": {
+      "melee": { "attr": 0, "misc": 0, "total": 0 },
+      "ranged": { "attr": 2, "misc": 2, "total": 4 }
+    },
+
+    "skills": {
+      "Acrobatics": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "Animal Handling": { "trained": false, "mod": 5, "rank": 0, "misc": 0, "total": 5 },
+      "Appraisal": { "trained": true, "mod": 7, "rank": 3, "misc": 0, "total": 10 },
+      "Arcana": { "trained": true, "mod": 7, "rank": 8, "misc": 2, "total": 17 },
+      "Athletics": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Crafting": { "trained": false, "mod": 7, "rank": 0, "misc": 0, "total": 7 },
+      "Deception": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Diplomacy": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "History": { "trained": true, "mod": 7, "rank": 6, "misc": 2, "total": 15 },
+      "Insight": { "trained": true, "mod": 7, "rank": 2, "misc": 0, "total": 9 },
+      "Intimidation": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Investigation": { "trained": true, "mod": 7, "rank": 5, "misc": 2, "total": 14 },
+      "Medicine": { "trained": false, "mod": 7, "rank": 0, "misc": 0, "total": 7 },
+      "Nature": { "trained": true, "mod": 7, "rank": 4, "misc": 2, "total": 13 },
+      "Perception": { "trained": false, "mod": 5, "rank": 0, "misc": 0, "total": 5 },
+      "Performance": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Persuasion": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Religion": { "trained": true, "mod": 7, "rank": 4, "misc": 0, "total": 11 },
+      "Sleight of Hand": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "Stealth": { "trained": false, "mod": 2, "rank": 0, "misc": 0, "total": 2 },
+      "Streetwise": { "trained": false, "mod": 7, "rank": 0, "misc": 0, "total": 7 },
+      "Survival": { "trained": false, "mod": 5, "rank": 0, "misc": 0, "total": 5 },
+      "Taming": { "trained": false, "mod": 5, "rank": 0, "misc": 0, "total": 5 }
+    },
+
+    "proficiencies": ["Simple Weapons", "Arcane Focus"],
+    "languages": ["Common", "Elvish", "Dwarvish", "Draconic", "Celestial", "Infernal", "Ancient"],
+
+    "attacks": [
+      { "attack_action": "Quarterstaff", "bonus": 0, "damage": "1d6", "type": "bludgeoning", "range": "5 ft" },
+      { "attack_action": "Elemental Burst (Fire)", "bonus": 9, "damage": "4d8+7", "type": "fire", "range": "60 ft" },
+      { "attack_action": "Elemental Burst (Lightning)", "bonus": 9, "damage": "4d8+7", "type": "lightning", "range": "60 ft" }
+    ],
+
+    "talents": [
+      { "name": "Spellcrafting (Rank 9)", "text": "Elemental Burst deals 4d8 + Int mod. +2 SP once. Two Signature Spells at -2 CP cost." },
+      { "name": "Blood Pack (Rank 2)", "text": "Sacrifice 1 LP to regain 1 CP (1/short rest). Spend 1 LP when casting for +2 damage or +2 Spell Save DC." },
+      { "name": "Divination (Rank 3)", "text": "+2 Insight, +2 Perception, +1 Defense. Roll two dice for Initiative. Advantage on saves vs illusions. 1/long rest sense invisible creatures within 30 ft." },
+      { "name": "Scholar (Rank 4)", "text": "+2 Arcana, History, Investigation, Nature. Reduce CP costs by 1. 1/short rest auto-pass knowledge check. 1/long rest recall obscure detail." },
+      { "name": "Spell Focus (Rank 4)", "text": "+2 Spell Attack, +2 Spell Save. Add Int mod to spell damage. Advantage on Concentration. Reroll 1s and 2s on damage. 1/rest maximize one spell's damage." },
+      { "name": "Warding (Rank 3)", "text": "Bonus Action: 1 CP for Ward Shield (+2 Defense, elemental resistance) for 1 minute. Extend to ally. 2 CP to stay at 1 HP once. Regain Ward on short rest." },
+      { "name": "Book Smart (Rank 3)", "text": "+2 History, Investigation, Arcana, Nature. Use Int instead of Wis for saves. Auto-pass recall checks TN 12 or lower." },
+      { "name": "Experienced (Rank 3)", "text": "+1 to all saving throws, +1 Melee and Ranged Attack Bonus, +1 to all weapon damage." }
+    ],
+    "features": [
+      { "name": "Adaptability", "text": "Gain two additional skill proficiencies of your choice." },
+      { "name": "Keen Mind", "text": "Proficient in History checks, gain advantage to recall lore, maps, or spoken words." },
+      { "name": "Arcane Initiate", "text": "Gain Spellcrafting Book, arcane focus, and basic training in shaping energy." },
+      { "name": "Spell Attunement", "text": "Spell Attack modifier equals Intellect modifier (+7). Spell Save TN equals 8 + Int mod (15)." },
+      { "name": "Flow of Thought", "text": "Once per short rest, as Bonus Action, gain advantage on Intellect saving throws until start of next turn." },
+      { "name": "Academic Circles", "text": "Request help from scribes, professors, and archivists who share information or grant access to rare texts." },
+      { "name": "Researcher", "text": "You know where to look for knowledge. Even if you don't know the information, you know where to find it." }
+    ],
+
+    "spellcrafting": {
+      "save_dc": 15,
+      "attack_bonus": 9,
+      "crafting_points": { "max": 22 },
+      "casting": "Intellect",
+      "spells": [
+        { "name": "Arcane Missile", "cp": 1, "details": "3d4+7 force damage, auto-hit, 120 ft range" },
+        { "name": "Fireball", "cp": 3, "details": "8d6 fire, 20 ft radius, 150 ft range, Agl save for half" },
+        { "name": "Lightning Bolt", "cp": 3, "details": "8d6 lightning, 100 ft line, Agl save for half" },
+        { "name": "Shield", "cp": 1, "details": "Reaction: +5 Defense until start of next turn" },
+        { "name": "Counterspell", "cp": 3, "details": "Reaction: Negate spell of equal or lower CP cost" },
+        { "name": "Dimension Door", "cp": 4, "details": "Teleport self and one willing creature up to 500 ft" },
+        { "name": "Wall of Force", "cp": 5, "details": "Create invisible wall, 10 panels, immune to damage" },
+        { "name": "Disintegrate", "cp": 6, "details": "10d6+40 force damage, End save negates" },
+        { "name": "Time Stop", "cp": 9, "details": "Take 1d4+1 turns while time is frozen for others" }
+      ]
+    },
+
+    "inventory": {
+      "items": ["Quarterstaff (Arcane Focus)", "Spellcrafting Book", "Robes of Protection (+2 Defense)", "Ring of Spell Storing", "Bag of Holding", "Ink and Quills", "Reference Tomes x5", "Component Pouch", "Scroll Case"],
+      "total_weight": "18 lb"
+    },
+
+    "notes": "Valdris has spent decades studying the fundamental forces of magic. He seeks to understand the connection between the elemental planes and believes a great magical catastrophe is approaching.",
+    "physical_traits": {
+      "height": "5'10\"",
+      "weight": "155 lb",
+      "size": "Medium",
+      "age": "52",
+      "creature_type": "Humanoid",
+      "eyes": "Silver with arcane runes",
+      "skin": "Pale",
+      "hair": "White, long"
+    },
+    "personality": {
+      "traits": "I quote obscure facts at every opportunity. I am endlessly curious.",
+      "ideal": "Knowledge. Truth must be pursued. (+1 Morality, +1 Rep)",
+      "bond": "I must complete my great work - a unified theory of magic. (0 Morality, 0 Rep)",
+      "flaw": "I become blind to morality when pursuing knowledge. (-1 Morality, -1 Rep)"
+    },
+    "alignment": { "alignment": "True Neutral", "mod": 0 },
+    "reputation": { "reputation": "Renowned", "mod": 0 },
+
+    "qr_payload": "",
+    "footer": {
+      "datecode": "2025-01-02",
+      "config": "RoW v2.0.1",
+      "id": "CHAR-004"
+    }
+  },
+
+  {
+    "id": "CHAR-005",
+    "character_name": "Kira Swiftpaw",
+    "player": "Sample Character",
+    "profession": "warden_of_the_wild",
+    "primary_path": "survival",
+    "race": "velkarr",
+    "ancestry": "umbravale",
+    "background": "nomad",
+
+    "level": 20,
+    "total_experience": 355000,
+    "stored_advance": "",
+
+    "ability_scores": {
+      "Might":     { "mod": 2, "saving_throw": 3, "total": 14, "roll": 14, "race": 0, "misc": 0 },
+      "Agility":   { "mod": 8, "saving_throw": 9, "total": 26, "roll": 15, "race": 5, "misc": 6 },
+      "Endurance": { "mod": 2, "saving_throw": 3, "total": 14, "roll": 15, "race": -1, "misc": 0 },
+      "Wisdom":    { "mod": 7, "saving_throw": 8, "total": 24, "roll": 15, "race": 5, "misc": 4 },
+      "Intellect": { "mod": 1, "saving_throw": 2, "total": 13, "roll": 12, "race": 1, "misc": 0 },
+      "Charisma":  { "mod": 0, "saving_throw": 1, "total": 10, "roll": 10, "race": 0, "misc": 0 }
+    },
+
+    "defense": {
+      "base": 9,
+      "agility": 8,
+      "shield": 0,
+      "misc": 4,
+      "total": 21
+    },
+    "speed": 45,
+    "initiative": 12,
+
+    "health": { "max": 78, "current": 78, "wounds": 0 },
+    "armor_hp": { "max": 14, "current": 14 },
+    "life_points": { "max": 14, "current": 14 },
+    "focus": { "max": 0, "current": 0 },
+
+    "passive": {
+      "perception": { "base": 10, "skill": 15, "misc": 4, "total": 29 },
+      "insight": { "base": 10, "skill": 9, "misc": 0, "total": 19 }
+    },
+
+    "attack_mods": {
+      "melee": { "attr": 8, "misc": 2, "total": 10 },
+      "ranged": { "attr": 8, "misc": 4, "total": 12 }
+    },
+
+    "skills": {
+      "Acrobatics": { "trained": true, "mod": 8, "rank": 8, "misc": 0, "total": 16 },
+      "Animal Handling": { "trained": true, "mod": 7, "rank": 8, "misc": 0, "total": 15 },
+      "Appraisal": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Arcana": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Athletics": { "trained": true, "mod": 2, "rank": 5, "misc": 0, "total": 7 },
+      "Crafting": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Deception": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Diplomacy": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "History": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Insight": { "trained": true, "mod": 1, "rank": 8, "misc": 0, "total": 9 },
+      "Intimidation": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Investigation": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Medicine": { "trained": true, "mod": 1, "rank": 4, "misc": 0, "total": 5 },
+      "Nature": { "trained": true, "mod": 1, "rank": 6, "misc": 0, "total": 7 },
+      "Perception": { "trained": true, "mod": 7, "rank": 8, "misc": 4, "total": 19 },
+      "Performance": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Persuasion": { "trained": false, "mod": 0, "rank": 0, "misc": 0, "total": 0 },
+      "Religion": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Sleight of Hand": { "trained": false, "mod": 8, "rank": 0, "misc": 0, "total": 8 },
+      "Stealth": { "trained": true, "mod": 8, "rank": 10, "misc": 2, "total": 20 },
+      "Streetwise": { "trained": false, "mod": 1, "rank": 0, "misc": 0, "total": 1 },
+      "Survival": { "trained": true, "mod": 7, "rank": 10, "misc": 0, "total": 17 },
+      "Taming": { "trained": true, "mod": 7, "rank": 6, "misc": 0, "total": 13 }
+    },
+
+    "proficiencies": ["Light Armor", "Medium Armor", "Simple Weapons", "Melee Weapons", "Ranged Weapons", "Herbal Kit", "Hunting Tools"],
+    "languages": ["Common", "Velkarran", "Sylvan", "Beast Speech", "Elvish"],
+
+    "attacks": [
+      { "attack_action": "Longbow", "bonus": 12, "damage": "1d8+8", "type": "piercing", "range": "150/600 ft" },
+      { "attack_action": "Longbow (Hunter's Mark)", "bonus": 12, "damage": "1d8+8+6d6", "type": "piercing", "range": "150/600 ft" },
+      { "attack_action": "Scimitar", "bonus": 10, "damage": "1d6+8", "type": "slashing", "range": "5 ft" },
+      { "attack_action": "Claw (Panther Companion)", "bonus": 10, "damage": "1d6+5", "type": "slashing", "range": "5 ft" }
+    ],
+
+    "talents": [
+      { "name": "Hunter (Rank 10)", "text": "Hunter's Mark: +6d6 damage vs marked prey. Track prey across any terrain. Sense prey within 1 mile. Prey cannot hide from you. Advantage on all checks against marked prey." },
+      { "name": "Beast Bond (Rank 3)", "text": "Panther companion (CR 5). Telepathic communication 1 mile. Companion can take reactions. Share senses at will. Companion gains your proficiency bonus to attacks and saves." },
+      { "name": "Adapt Explorer (Rank 3)", "text": "Ignore difficult terrain. Resistance to environmental damage. Immune to natural exhaustion. Survive without food/water for 7 days. 1/long rest, blend with environment for advantage on Stealth." },
+      { "name": "Tracker's Instinct (Rank 3)", "text": "Advantage on Perception and Insight. Detect hidden creatures within 30 ft. Cannot be surprised. 1/short rest, know exact location of all creatures within 60 ft." },
+      { "name": "Wilderness Adaptation (Rank 3)", "text": "Advantage on Survival for natural hazards. Resistance to poison and disease. Immune to natural difficult terrain. Leave no tracks. 1/long rest, commune with nature for information." },
+      { "name": "Defensive Footwork (Rank 3)", "text": "Add Agl mod to Defense again when Dodging. Dodge as Bonus Action 1/short rest. When enemy misses, move 10 ft without provoking." },
+      { "name": "Agile Protector (Rank 3)", "text": "When missed by melee, move 10 ft. Impose disadvantage on melee attack vs ally as Reaction. When ally is hit within 10 ft, swap places and take the hit." },
+      { "name": "Mobile (Rank 3)", "text": "+10 ft movement. Ignore difficult terrain. Creatures you attack can't opportunity attack you." },
+      { "name": "Alertness (Rank 3)", "text": "+4 Initiative and passive Perception. Cannot be surprised. +2 TN versus hidden/invisible attackers." },
+      { "name": "Master of Survival (Capstone)", "text": "Cannot be tracked by nonmagical means. Auto-detect ambushes/traps within 20 ft. 1/short rest force ally reroll failed save. 1/long rest, you and companion drop to 1 HP instead of 0 LP. Movement unaffected by terrain/weather/restraints." }
+    ],
+    "features": [
+      { "name": "Primal Senses", "text": "Proficient with Perception checks with +2 miscellaneous bonus." },
+      { "name": "Silent Step", "text": "Proficient with advantage on Stealth checks when moving at half speed (makes no sound)." },
+      { "name": "Natural Resilience", "text": "Advantage on Survival and Navigation checks in nonmagical terrain." },
+      { "name": "Hunter's Reflex", "text": "When rolling Initiative, move up to 10 ft before combat begins." },
+      { "name": "Keen Eyes", "text": "Identify creature tracks, terrain signs, or nearby movement with Perception check as Bonus Action." },
+      { "name": "Beast Companion", "text": "Shadow, a panther companion (CR 5). Commands as bonus action, acts immediately after your turn." },
+      { "name": "Natural Steward", "text": "Friendly ties with druid circles, scouting lodges, or wildlife keepers who offer shelter or guidance." },
+      { "name": "Tribal Hospitality", "text": "Among your kin or allied clans, you and companions are welcomed with food and shelter." }
+    ],
+
+    "spellcrafting": {
+      "save_dc": 0,
+      "attack_bonus": 0,
+      "crafting_points": { "max": 0 },
+      "casting": "",
+      "spells": []
+    },
+
+    "inventory": {
+      "items": ["Longbow +2", "Quiver of Endless Arrows", "Scimitar +1", "Cloak of Elvenkind (+2 Stealth)", "Boots of Speed (+10 ft)", "Studded Leather +2", "Herbal Kit", "Hunting Tools", "Rope 100ft", "Grappling Hook", "Bedroll", "Rations x10", "Waterskin", "Heirloom Trinket (panther fang necklace)"],
+      "total_weight": "45 lb"
+    },
+
+    "notes": "Kira and her panther Shadow have roamed the Umbravale forests for decades. She is called upon when threats emerge from the wilds that normal hunters cannot face. Legends say she can track a sparrow through a thunderstorm.",
+    "physical_traits": {
+      "height": "5'6\"",
+      "weight": "130 lb",
+      "size": "Medium",
+      "age": "31",
+      "creature_type": "Humanoid",
+      "eyes": "Amber, reflective",
+      "skin": "Black fur with silver spots",
+      "hair": "Silver mane"
+    },
+    "personality": {
+      "traits": "I prefer animals to people. I show kindness only when least expected.",
+      "ideal": "Balance. All paths have meaning. (0 Morality, 0 Rep)",
+      "bond": "I protect a sacred grove that must never be found. (+1 Morality, +1 Rep)",
+      "flaw": "I flee when ties grow too deep. (0 Morality, -1 Rep)"
+    },
+    "alignment": { "alignment": "Neutral Good", "mod": 1 },
+    "reputation": { "reputation": "Renowned", "mod": 0 },
+
+    "qr_payload": "",
+    "footer": {
+      "datecode": "2025-01-02",
+      "config": "RoW v2.0.1",
+      "id": "CHAR-005"
+    }
+  }
+]

@@ -21,11 +21,25 @@ def character_list(request):
 def character_detail(request, code):
 	character = get_object_or_404(Character, pk=code)
 	data = character.data or {}
+	if request.GET.get("download") == "json":
+		pretty = json.dumps(data, indent=2)
+		return HttpResponse(
+			pretty,
+			content_type="application/json",
+			headers={"Content-Disposition": f"attachment; filename={character.code}_payload.json"},
+		)
 	pretty_json = json.dumps(data, indent=2)
+	data_json = json.dumps(data)
 	return render(
 		request,
 		"characters/detail.html",
-		{"character": character, "data": data, "pretty_json": pretty_json},
+		{
+			"character": character,
+			"data": data,
+			"pretty_json": pretty_json,
+			"data_json": data_json,
+			"skills": CharacterForm.SKILLS,
+		},
 	)
 
 
@@ -33,16 +47,20 @@ def character_create(request):
 	if request.method == "POST":
 		form = CharacterForm(request.POST)
 		if form.is_valid():
-			character = form.save(commit=False)
-			payload = form.cleaned_data["data"] or {}
-			payload.setdefault("id", character.code)
-			payload.setdefault("character_name", character.name)
-			character.data = payload
-			character.save()
-			return redirect("characters:detail", code=character.code)
+			form.save()
+			return redirect("characters:detail", code=form.cleaned_data.get("code"))
 	else:
-		form = CharacterForm(initial={"code": "CHAR-001", "data": default_character_data()})
-	return render(request, "characters/form.html", {"form": form, "mode": "create"})
+		form = CharacterForm(initial={"code": "CHAR-001"})
+	return render(
+		request,
+		"characters/form.html",
+		{
+			"form": form,
+			"mode": "create",
+			"abilities": CharacterForm.ABILITIES,
+			"skills": CharacterForm.SKILLS,
+		},
+	)
 
 
 def character_edit(request, code):
@@ -50,16 +68,21 @@ def character_edit(request, code):
 	if request.method == "POST":
 		form = CharacterForm(request.POST, instance=character)
 		if form.is_valid():
-			character = form.save(commit=False)
-			payload = form.cleaned_data["data"] or {}
-			payload.setdefault("id", character.code)
-			payload.setdefault("character_name", character.name)
-			character.data = payload
-			character.save()
+			form.save()
 			return redirect("characters:detail", code=character.code)
 	else:
-		form = CharacterForm(instance=character, initial={"data": character.data or default_character_data()})
-	return render(request, "characters/form.html", {"form": form, "mode": "edit", "character": character})
+		form = CharacterForm(instance=character)
+	return render(
+		request,
+		"characters/form.html",
+		{
+			"form": form,
+			"mode": "edit",
+			"character": character,
+			"abilities": CharacterForm.ABILITIES,
+			"skills": CharacterForm.SKILLS,
+		},
+	)
 
 
 def character_qr(request, code):

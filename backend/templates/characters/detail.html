@@ -7,8 +7,11 @@
   <p>
     <a class="btn" href="/characters/{{ character.code }}/edit/">Edit</a>
     <a class="btn secondary" href="/characters/{{ character.code }}/qr/" target="_blank">QR Code</a>
+    <a class="btn secondary" href="?download=json">Download Payload JSON</a>
   </p>
-  <h3>Payload</h3>
-  <pre>{{ pretty_json }}</pre>
+</div>
+
+<div class="panel" style="overflow-x:auto;">
+  {% include "characters/sheet_embed.html" %}
 </div>
 {% endblock %}

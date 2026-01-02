@@ -1,34 +1,141 @@
 {% extends "base.html" %}
+{% load form_extras %}
 {% block title %}{{ mode|capfirst }} character | Realm of Warriors{% endblock %}
 {% block content %}
 <div class="panel">
   <h1>{{ mode|capfirst }} character</h1>
   <form method="post">
     {% csrf_token %}
-    <div class="field">
-      <label for="id_code">Code</label>
-      {{ form.code }}
-      {% if form.code.help_text %}<small>{{ form.code.help_text }}</small>{% endif %}
-    </div>
-    <div class="field">
-      <label for="id_name">Name</label>
-      {{ form.name }}
-    </div>
-    <div class="field">
-      <label for="id_player">Player</label>
-      {{ form.player }}
-    </div>
-    <div class="field">
-      <label for="id_profession">Profession</label>
-      {{ form.profession }}
-    </div>
-    <div class="field">
-      <label for="id_data">Payload (JSON)</label>
-      {{ form.data }}
-      {% if form.data.help_text %}<small>{{ form.data.help_text }}</small>{% endif %}
-    </div>
+
+    <h3>Identity</h3>
+    <div class="field"><label>Code</label>{{ form.code }}</div>
+    <div class="field"><label>Name</label>{{ form.name }}</div>
+    <div class="field"><label>Player</label>{{ form.player }}</div>
+    <div class="field"><label>Profession</label>{{ form.profession }}</div>
+    <div class="field"><label>Primary Path</label>{{ form.primary_path }}</div>
+    <div class="field"><label>Race</label>{{ form.race }}</div>
+    <div class="field"><label>Ancestry</label>{{ form.ancestry }}</div>
+    <div class="field"><label>Background</label>{{ form.background }}</div>
+    <div class="field"><label>Level</label>{{ form.level }}</div>
+    <div class="field"><label>Total Experience</label>{{ form.total_experience }}</div>
+    <div class="field"><label>Stored Advance</label>{{ form.stored_advance }}</div>
+
+    <h3>Ability Scores</h3>
+    <table>
+      <thead>
+        <tr><th>Ability</th><th>Mod</th><th>Save</th><th>Total</th><th>Roll</th><th>Race</th><th>Misc</th></tr>
+      </thead>
+      <tbody>
+        {% for label, slug in abilities %}
+          {% with mod='ability_'|add:slug|add:'_mod' save='ability_'|add:slug|add:'_saving_throw' total='ability_'|add:slug|add:'_total' roll='ability_'|add:slug|add:'_roll' race='ability_'|add:slug|add:'_race' misc='ability_'|add:slug|add:'_misc' %}
+            <tr>
+              <td>{{ label }}</td>
+              <td>{{ form|field:mod }}</td>
+              <td>{{ form|field:save }}</td>
+              <td>{{ form|field:total }}</td>
+              <td>{{ form|field:roll }}</td>
+              <td>{{ form|field:race }}</td>
+              <td>{{ form|field:misc }}</td>
+            </tr>
+          {% endwith %}
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h3>Defense & Movement</h3>
+    <div class="field"><label>Defense Base</label>{{ form.defense_base }}</div>
+    <div class="field"><label>Defense Agility</label>{{ form.defense_agility }}</div>
+    <div class="field"><label>Defense Shield</label>{{ form.defense_shield }}</div>
+    <div class="field"><label>Defense Misc</label>{{ form.defense_misc }}</div>
+    <div class="field"><label>Defense Total</label>{{ form.defense_total }}</div>
+    <div class="field"><label>Speed</label>{{ form.speed }}</div>
+    <div class="field"><label>Initiative</label>{{ form.initiative }}</div>
+
+    <h3>Vitals</h3>
+    <div class="field"><label>Health Max</label>{{ form.health_max }}</div>
+    <div class="field"><label>Health Current</label>{{ form.health_current }}</div>
+    <div class="field"><label>Wounds</label>{{ form.health_wounds }}</div>
+    <div class="field"><label>Armor HP Max</label>{{ form.armor_hp_max }}</div>
+    <div class="field"><label>Armor HP Current</label>{{ form.armor_hp_current }}</div>
+    <div class="field"><label>Life Points Max</label>{{ form.life_points_max }}</div>
+    <div class="field"><label>Life Points Current</label>{{ form.life_points_current }}</div>
+    <div class="field"><label>Focus Max</label>{{ form.focus_max }}</div>
+    <div class="field"><label>Focus Current</label>{{ form.focus_current }}</div>
+
+    <h3>Passive</h3>
+    <div class="field"><label>Passive Perception (base/skill/misc/total)</label>{{ form.passive_perception_base }} {{ form.passive_perception_skill }} {{ form.passive_perception_misc }} {{ form.passive_perception_total }}</div>
+    <div class="field"><label>Passive Insight (base/skill/misc/total)</label>{{ form.passive_insight_base }} {{ form.passive_insight_skill }} {{ form.passive_insight_misc }} {{ form.passive_insight_total }}</div>
+
+    <h3>Attack Mods</h3>
+    <div class="field"><label>Melee (attr/misc/total)</label>{{ form.attack_melee_attr }} {{ form.attack_melee_misc }} {{ form.attack_melee_total }}</div>
+    <div class="field"><label>Ranged (attr/misc/total)</label>{{ form.attack_ranged_attr }} {{ form.attack_ranged_misc }} {{ form.attack_ranged_total }}</div>
+
+    <h3>Skills</h3>
+    <table>
+      <thead><tr><th>Skill</th><th>Trained</th><th>Mod</th><th>Rank</th><th>Misc</th><th>Total</th></tr></thead>
+      <tbody>
+        {% for label, slug in skills %}
+          {% with trained='skill_'|add:slug|add:'_trained' mod='skill_'|add:slug|add:'_mod' rank='skill_'|add:slug|add:'_rank' misc='skill_'|add:slug|add:'_misc' total='skill_'|add:slug|add:'_total' %}
+            <tr>
+              <td>{{ label }}</td>
+              <td>{{ form|field:trained }}</td>
+              <td>{{ form|field:mod }}</td>
+              <td>{{ form|field:rank }}</td>
+              <td>{{ form|field:misc }}</td>
+              <td>{{ form|field:total }}</td>
+            </tr>
+          {% endwith %}
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h3>Spellcrafting</h3>
+    <div class="field"><label>Save DC</label>{{ form.spell_save_dc }}</div>
+    <div class="field"><label>Attack Bonus</label>{{ form.spell_attack_bonus }}</div>
+    <div class="field"><label>Crafting Points Max</label>{{ form.spell_cp_max }}</div>
+    <div class="field"><label>Casting</label>{{ form.spell_casting }}</div>
+    <div class="field"><label>Spells</label>{{ form.spell_spells_text }}<small>{{ form.spell_spells_text.help_text }}</small></div>
+
+    <h3>Lists</h3>
+    <div class="field"><label>Proficiencies</label>{{ form.proficiencies_text }}</div>
+    <div class="field"><label>Languages</label>{{ form.languages_text }}</div>
+    <div class="field"><label>Attacks</label>{{ form.attacks_text }}<small>{{ form.attacks_text.help_text }}</small></div>
+    <div class="field"><label>Talents</label>{{ form.talents_text }}<small>{{ form.talents_text.help_text }}</small></div>
+    <div class="field"><label>Features</label>{{ form.features_text }}<small>{{ form.features_text.help_text }}</small></div>
+    <div class="field"><label>Inventory Items</label>{{ form.inventory_items_text }}<small>{{ form.inventory_items_text.help_text }}</small></div>
+    <div class="field"><label>Inventory Total Weight</label>{{ form.inventory_total_weight }}</div>
+
+    <h3>Physical</h3>
+    <div class="field"><label>Height</label>{{ form.height }}</div>
+    <div class="field"><label>Weight</label>{{ form.weight }}</div>
+    <div class="field"><label>Size</label>{{ form.size }}</div>
+    <div class="field"><label>Age</label>{{ form.age }}</div>
+    <div class="field"><label>Creature Type</label>{{ form.creature_type }}</div>
+    <div class="field"><label>Eyes</label>{{ form.eyes }}</div>
+    <div class="field"><label>Skin</label>{{ form.skin }}</div>
+    <div class="field"><label>Hair</label>{{ form.hair }}</div>
+
+    <h3>Personality</h3>
+    <div class="field"><label>Traits</label>{{ form.personality_traits }}</div>
+    <div class="field"><label>Ideal</label>{{ form.personality_ideal }}</div>
+    <div class="field"><label>Bond</label>{{ form.personality_bond }}</div>
+    <div class="field"><label>Flaw</label>{{ form.personality_flaw }}</div>
+
+    <h3>Alignment & Reputation</h3>
+    <div class="field"><label>Alignment</label>{{ form.alignment_alignment }}</div>
+    <div class="field"><label>Alignment Mod</label>{{ form.alignment_mod }}</div>
+    <div class="field"><label>Reputation</label>{{ form.reputation_reputation }}</div>
+    <div class="field"><label>Reputation Mod</label>{{ form.reputation_mod }}</div>
+
+    <h3>Misc</h3>
+    <div class="field"><label>QR Payload</label>{{ form.qr_payload }}</div>
+    <div class="field"><label>Footer Datecode</label>{{ form.footer_datecode }}</div>
+    <div class="field"><label>Footer Config</label>{{ form.footer_config }}</div>
+    <div class="field"><label>Footer ID</label>{{ form.footer_id }}</div>
+    <div class="field"><label>Notes</label>{{ form.notes }}</div>
+
     <button class="btn" type="submit">Save</button>
-    <a class="btn secondary" href="{% if character %}/characters/{{ character.code }}/{% else %}/{% endif %}">Cancel</a>
+    <a class="btn secondary" href="{% if character %}/characters/{{ character.code }}/{% else %}/characters/{% endif %}">Cancel</a>
   </form>
   {% if form.errors %}
     <pre>{{ form.errors }}</pre>
