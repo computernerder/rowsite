@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>404 | Realm of Warriors</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=IM+Fell+English:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--ink: #2c1a10;
+			--ember: #b25a1b;
+			--gold: #d8b46a;
+			--parchment: #f3e6ce;
+			--parchment-deep: #e5d5b6;
+			--shadow: rgba(25, 15, 10, 0.85);
+			--grid: rgba(77, 54, 32, 0.25);
+		}
+		* { box-sizing: border-box; margin: 0; padding: 0; }
+		body {
+			min-height: 100vh;
+			font-family: 'IM Fell English', 'Times New Roman', serif;
+			color: var(--ink);
+			background:
+				radial-gradient(circle at 20% 20%, rgba(210,158,90,0.22), transparent 42%),
+				radial-gradient(circle at 80% 12%, rgba(140,92,48,0.24), transparent 45%),
+				radial-gradient(circle at 50% 82%, rgba(120,63,28,0.22), transparent 40%),
+				#2a1c11;
+			display: grid;
+			place-items: center;
+			overflow: hidden;
+		}
+		body::before {
+			content: "";
+			position: fixed;
+			inset: 0;
+			background-image: url('images/background.jpeg');
+			background-size: cover;
+			background-position: center;
+			opacity: 0.32;
+			mix-blend-mode: overlay;
+			filter: saturate(0.8) sepia(0.45) contrast(1.05);
+			z-index: -2;
+		}
+		body::after {
+			content: "";
+			position: fixed;
+			inset: 0;
+			background: radial-gradient(circle at 50% 20%, rgba(255,255,255,0.1), transparent 35%),
+								linear-gradient(135deg, rgba(33,22,13,0.92), rgba(33,22,13,0.62));
+			z-index: -1;
+		}
+		.grain {
+			pointer-events: none;
+			position: fixed;
+			inset: -100px;
+			background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+			background-size: 22px 22px;
+			opacity: 0.7;
+			animation: drift 24s linear infinite;
+			mix-blend-mode: soft-light;
+			z-index: 0;
+		}
+		@keyframes drift {
+			from { transform: translate3d(0,0,0); }
+			to   { transform: translate3d(-60px,-40px,0); }
+		}
+		.scene {
+			position: relative;
+			width: min(900px, 92vw);
+			aspect-ratio: 16 / 9;
+			display: grid;
+			place-items: center;
+			border-radius: 26px;
+			background: linear-gradient(135deg, rgba(243,230,206,0.9), rgba(229,213,182,0.92));
+			border: 2px solid rgba(40,25,15,0.65);
+			box-shadow:
+				0 18px 42px rgba(0,0,0,0.45),
+				inset 0 0 0 1px rgba(255,255,255,0.35);
+			overflow: hidden;
+		}
+		.scene::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: repeating-linear-gradient(
+				90deg,
+				transparent 0 14px,
+				var(--grid) 14px 15px,
+				transparent 15px 28px
+			);
+			opacity: 0.35;
+			pointer-events: none;
+			mix-blend-mode: multiply;
+		}
+		.orbs span {
+			position: absolute;
+			width: 260px;
+			height: 260px;
+			border-radius: 50%;
+			filter: blur(28px);
+			opacity: 0.38;
+			animation: float 16s ease-in-out infinite alternate;
+		}
+		.orbs span:nth-child(1) { background: radial-gradient(circle, rgba(224,170,88,0.75) 0%, rgba(224,170,88,0) 65%); top: -60px; left: 10%; animation-duration: 17s; }
+		.orbs span:nth-child(2) { background: radial-gradient(circle, rgba(148,92,48,0.7) 0%, rgba(148,92,48,0) 70%); bottom: -80px; right: 12%; animation-duration: 19s; }
+		.orbs span:nth-child(3) { background: radial-gradient(circle, rgba(190,126,60,0.65) 0%, rgba(190,126,60,0) 68%); top: 36%; right: 46%; animation-duration: 21s; }
+		@keyframes float {
+			0%   { transform: translate3d(0,0,0) scale(1); }
+			100% { transform: translate3d(24px,-18px,0) scale(1.12); }
+		}
+		.card {
+			position: relative;
+			z-index: 2;
+			display: grid;
+			grid-template-columns: 1.05fr 0.95fr;
+			gap: min(5vw, 36px);
+			align-items: center;
+			width: min(820px, 88vw);
+			padding: min(5vw, 32px);
+		}
+		.card::before {
+			content: "";
+			position: absolute;
+			inset: 18px;
+			border-radius: 20px;
+			background: linear-gradient(145deg, rgba(255,255,255,0.24), rgba(243,230,206,0.08));
+			border: 1px solid rgba(44,28,16,0.2);
+			box-shadow:
+				0 10px 30px rgba(0,0,0,0.22),
+				inset 0 0 0 1px rgba(255,255,255,0.22);
+			z-index: -1;
+			transform: rotate(-0.6deg);
+		}
+		.art {
+			display: grid;
+			place-items: center;
+			position: relative;
+		}
+		.badge {
+			position: absolute;
+			top: 14px;
+			left: 12px;
+			padding: 8px 12px;
+			background: rgba(44,28,16,0.9);
+			color: #f8eed8;
+			font-family: 'JetBrains Mono', monospace;
+			font-size: 12px;
+			border-radius: 14px;
+			box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+			letter-spacing: 0.4px;
+			border: 1px solid rgba(216,180,106,0.6);
+		}
+		.art img {
+			max-width: 200%;
+			width: min(760px, 60vw);
+			filter: drop-shadow(0 18px 26px rgba(0,0,0,0.45));
+			animation: bob 4s ease-in-out infinite;
+		}
+		@keyframes bob {
+			0%, 100% { transform: translateY(0); }
+			50% { transform: translateY(-10px); }
+		}
+		.copy {
+			color: #2c1a10;
+			text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+		}
+		.eyebrow {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			padding: 6px 12px;
+			background: rgba(216,180,106,0.18);
+			border: 1px solid rgba(65,41,23,0.35);
+			border-radius: 14px;
+			font-family: 'JetBrains Mono', monospace;
+			font-size: 12px;
+			letter-spacing: 0.3px;
+			margin-bottom: 10px;
+			color: #3a2415;
+		}
+		.eyebrow::before {
+			content: "✶";
+			color: var(--ember);
+			font-size: 14px;
+		}
+		h1 {
+			font-family: 'Uncial Antiqua', 'IM Fell English', serif;
+			font-size: clamp(44px, 7vw, 76px);
+			line-height: 1.05;
+			margin-bottom: 12px;
+			letter-spacing: -0.5px;
+			color: #2c1a10;
+		}
+		.lead {
+			font-size: clamp(17px, 2.3vw, 21px);
+			max-width: 32ch;
+			color: rgba(44,26,16,0.9);
+			margin-bottom: 18px;
+		}
+		.list {
+			list-style: none;
+			display: grid;
+			gap: 8px;
+			margin-bottom: 22px;
+			color: rgba(44,26,16,0.92);
+		}
+		.list li {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			padding: 9px 13px;
+			background: rgba(255,255,255,0.45);
+			border: 1px solid rgba(65,41,23,0.28);
+			border-radius: 12px;
+			backdrop-filter: blur(2px);
+			font-size: 14px;
+			box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+		}
+		.list li::before {
+			content: "❯";
+			color: var(--ember);
+			font-size: 12px;
+		}
+		.actions {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+		.btn {
+			appearance: none;
+			border: none;
+			border-radius: 12px;
+			padding: 12px 18px;
+			font-weight: 700;
+			letter-spacing: 0.3px;
+			cursor: pointer;
+			transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+			text-decoration: none;
+			color: #1f120a;
+			background: linear-gradient(135deg, #d9b56d, #c28b4a);
+			box-shadow: 0 8px 24px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(255,255,255,0.35);
+			border: 1px solid rgba(52,31,18,0.4);
+		}
+		.btn:hover { transform: translateY(-2px) scale(1.01); box-shadow: 0 12px 24px rgba(0,0,0,0.3); }
+		.btn:active { transform: translateY(0); }
+		.btn-alt {
+			color: #2c1a10;
+			background: rgba(222,202,160,0.8);
+			border: 1px solid rgba(65,41,23,0.32);
+			box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+		}
+		.floating-bits {
+			position: absolute;
+			inset: 0;
+			pointer-events: none;
+			z-index: 1;
+		}
+		.bit {
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			border-radius: 3px;
+			background: rgba(255,255,255,0.35);
+			animation: blink 3s ease-in-out infinite alternate;
+		}
+		.bit:nth-child(odd) { animation-duration: 2.4s; }
+		.bit:nth-child(3n) { width: 16px; height: 16px; background: var(--mint); }
+		@keyframes blink {
+			from { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+			to   { transform: translateY(-10px) rotate(12deg); opacity: 1; }
+		}
+		.footer-note {
+			position: absolute;
+			bottom: 18px;
+			right: 22px;
+			color: rgba(44,26,16,0.75);
+			font-size: 12px;
+			font-family: 'JetBrains Mono', monospace;
+			letter-spacing: 0.3px;
+		}
+		@media (max-width: 760px) {
+			.card {
+				grid-template-columns: 1fr;
+				text-align: center;
+			}
+			.badge { left: 50%; transform: translateX(-50%); }
+			.list { justify-items: center; }
+			.lead, .list { margin-inline: auto; }
+			.footer-note { left: 50%; transform: translateX(-50%); right: auto; }
+		}
+	</style>
+</head>
+<body>
+	<div class="grain" aria-hidden="true"></div>
+	<div class="scene">
+		<div class="floating-bits" aria-hidden="true">
+			<span class="bit" style="top: 12%; left: 18%;"></span>
+			<span class="bit" style="top: 24%; right: 12%;"></span>
+			<span class="bit" style="top: 52%; left: 8%;"></span>
+			<span class="bit" style="bottom: 18%; left: 32%;"></span>
+			<span class="bit" style="bottom: 22%; right: 18%;"></span>
+			<span class="bit" style="top: 64%; right: 6%;"></span>
+		</div>
+		<div class="orbs" aria-hidden="true">
+			<span></span><span></span><span></span>
+		</div>
+		<div class="card">
+			<div class="art">
+				<div class="badge">Error • 404</div>
+				<img src="images/404.png" alt="Lost adventurer illustration">
+			</div>
+			<div class="copy">
+				<div class="eyebrow">You found a weird portal</div>
+				<h1>Oops, this realm is uncharted.</h1>
+				<p class="lead">The page you seek slipped through a rift. Maybe it never existed, or maybe it is hiding with the dragons.</p>
+				<ul class="list">
+					<li>Try the main map (home)</li>
+					<li>Check the spelling in your scroll (URL)</li>
+					<li>Report the rift if it keeps happening</li>
+				</ul>
+				<div class="actions">
+					<a class="btn" href="/">Back to the stronghold</a>
+					<a class="btn btn-alt" href="mailto:support@realmofwarriors.games">Report this rift</a>
+				</div>
+			</div>
+		</div>
+		<div class="footer-note">Realm of Warriors • 404 anomaly</div>
+	</div>
+</body>
+</html>
