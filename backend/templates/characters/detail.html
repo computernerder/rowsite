@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ character.code }} | Realm of Warriors{% endblock %}
+{% block content %}
+<div class="panel">
+  <h1>{{ character.code }} — {{ character.name|default:data.character_name|default:"Unnamed" }}</h1>
+  <p><strong>Player:</strong> {{ character.player|default:"—" }} | <strong>Profession:</strong> {{ character.profession|default:"—" }}</p>
+  <p>
+    <a class="btn" href="/characters/{{ character.code }}/edit/">Edit</a>
+    <a class="btn secondary" href="/characters/{{ character.code }}/qr/" target="_blank">QR Code</a>
+  </p>
+  <h3>Payload</h3>
+  <pre>{{ pretty_json }}</pre>
+</div>
+{% endblock %}

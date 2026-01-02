@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Characters | Realm of Warriors{% endblock %}
+{% block content %}
+<div class="panel">
+  <h1>Stored Characters</h1>
+  <p>Landing page for the builder. Pick a character to view or update. QR links will point directly to each sheet.</p>
+  <p><a class="btn" href="/characters/new/">+ New character</a></p>
+  <table>
+    <thead>
+      <tr><th>Code</th><th>Name</th><th>Player</th><th>Profession</th><th>Updated</th><th></th></tr>
+    </thead>
+    <tbody>
+      {% for character in characters %}
+        <tr>
+          <td><a href="{{ character.get_absolute_url }}">{{ character.code }}</a></td>
+          <td>{{ character.name|default:character.data.character_name|default:"—" }}</td>
+          <td>{{ character.player|default:"—" }}</td>
+          <td>{{ character.profession|default:"—" }}</td>
+          <td>{{ character.updated_at|date:"Y-m-d H:i" }}</td>
+          <td><a class="btn secondary" href="{{ character.get_absolute_url }}">Open</a></td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="6">No characters stored yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

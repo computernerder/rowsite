@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}{{ mode|capfirst }} character | Realm of Warriors{% endblock %}
+{% block content %}
+<div class="panel">
+  <h1>{{ mode|capfirst }} character</h1>
+  <form method="post">
+    {% csrf_token %}
+    <div class="field">
+      <label for="id_code">Code</label>
+      {{ form.code }}
+      {% if form.code.help_text %}<small>{{ form.code.help_text }}</small>{% endif %}
+    </div>
+    <div class="field">
+      <label for="id_name">Name</label>
+      {{ form.name }}
+    </div>
+    <div class="field">
+      <label for="id_player">Player</label>
+      {{ form.player }}
+    </div>
+    <div class="field">
+      <label for="id_profession">Profession</label>
+      {{ form.profession }}
+    </div>
+    <div class="field">
+      <label for="id_data">Payload (JSON)</label>
+      {{ form.data }}
+      {% if form.data.help_text %}<small>{{ form.data.help_text }}</small>{% endif %}
+    </div>
+    <button class="btn" type="submit">Save</button>
+    <a class="btn secondary" href="{% if character %}/characters/{{ character.code }}/{% else %}/{% endif %}">Cancel</a>
+  </form>
+  {% if form.errors %}
+    <pre>{{ form.errors }}</pre>
+  {% endif %}
+</div>
+{% endblock %}

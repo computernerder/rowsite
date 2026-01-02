@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Realm of Warriors{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=IM+Fell+English:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f1e5;
+      --panel: #fff8ec;
+      --border: #c4a16a;
+      --text: #2c1a10;
+      --accent: #b36b2c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "IM Fell English", "Georgia", serif;
+      background: radial-gradient(circle at 15% 15%, rgba(205, 157, 92, 0.08), transparent 40%),
+                  radial-gradient(circle at 80% 10%, rgba(144, 101, 54, 0.06), transparent 38%),
+                  var(--bg);
+      color: var(--text);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 18px;
+      border-bottom: 2px solid var(--border);
+      background: linear-gradient(180deg, #fffdf8, #f4e7d2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a { margin-right: 12px; font-weight: 600; }
+    main {
+      max-width: 1100px;
+      margin: 20px auto;
+      padding: 0 16px 32px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      padding: 18px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      background: linear-gradient(135deg, #d9b56d, #c28b4a);
+      color: #1f120a;
+      border: 1px solid #8e6739;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 18px rgba(0,0,0,0.16); }
+    .btn.secondary {
+      background: #f5ecdc;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    form .field { margin-bottom: 14px; }
+    label { display: block; font-weight: 700; margin-bottom: 6px; }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #c4a16a;
+      border-radius: 8px;
+      font-family: "JetBrains Mono", monospace;
+      background: #fffdf8;
+    }
+    textarea { min-height: 200px; }
+    pre {
+      background: #1c130d;
+      color: #f5ecdc;
+      padding: 14px;
+      border-radius: 10px;
+      overflow: auto;
+      font-size: 13px;
+    }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; border-bottom: 1px solid #e1caa1; text-align: left; }
+  </style>
+  {% block head_extra %}{% endblock %}
+</head>
+<body>
+  <header>
+    <div><strong>Realm of Warriors</strong> • Character Vault</div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/characters/new/">New Character</a>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
