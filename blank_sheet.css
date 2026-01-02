@@ -322,6 +322,49 @@ table.inner th {
     background: rgba(255,255,255,0.85);
 }
 
+.grid-table .value,
+.grid-table .value-box,
+.grid-table .empty-box,
+.grid-table .empty-box-lg,
+.grid-table span.value {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.feature-table td,
+.talent-table td {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.lang-table td,
+.prof-table td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.overflow-table td {
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* Compact rows for physical traits */
+.physical-grid td {
+    padding: 2px 3px;
+    line-height: 1.15;
+}
+.physical-grid .label {
+    margin-bottom: 0;
+}
+.physical-grid .value {
+    display: block;
+    margin-top: 1px;
+}
+
 /* === SKILLS TABLE === */
 .skills-table { font-size: 7pt; }
 .skills-table th, .skills-table td { border: 1px solid #666; padding: 1px 2px; }
