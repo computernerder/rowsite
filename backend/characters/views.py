@@ -7,17 +7,20 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from django.contrib.auth.decorators import login_required, permission_required
 
 from .defaults import default_character_data
 from .forms import CharacterForm
 from .models import Character
 
 
+@login_required
 def character_list(request):
 	characters = Character.objects.order_by("code")
 	return render(request, "characters/list.html", {"characters": characters})
 
 
+@login_required
 def character_detail(request, code):
 	character = get_object_or_404(Character, pk=code)
 	data = character.data or {}
@@ -43,6 +46,7 @@ def character_detail(request, code):
 	)
 
 
+@permission_required('characters.add_character')
 def character_create(request):
 	if request.method == "POST":
 		form = CharacterForm(request.POST)
@@ -63,6 +67,7 @@ def character_create(request):
 	)
 
 
+@permission_required('characters.change_character')
 def character_edit(request, code):
 	character = get_object_or_404(Character, pk=code)
 	if request.method == "POST":
@@ -85,6 +90,7 @@ def character_edit(request, code):
 	)
 
 
+@login_required
 def character_qr(request, code):
 	character = get_object_or_404(Character, pk=code)
 	target_url = request.build_absolute_uri(reverse("characters:detail", args=[character.code]))

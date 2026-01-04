@@ -15,6 +15,11 @@
   setField("player", data.player || fallback.player || "");
   setField("profession", data.profession || fallback.profession || "");
   setField("primary_path", data.primary_path || "");
+  const raceBlock = [data.race, data.ancestry, data.background]
+    .map(v => (v ?? "").toString().trim())
+    .filter(Boolean)
+    .join(" / ");
+  setField("race_block", raceBlock);
   setField("background", data.background || "");
   setField("race", data.race || "");
   setField("ancestry", data.ancestry || "");

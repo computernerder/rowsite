@@ -8,7 +8,7 @@ Brief notes on the character sheet embed, file layout, and common commands for t
 - `blank_sheet.css` — Shared stylesheet for all pages of the sheet.
 - `images/` — Corner art, logos, QR placeholder, etc.
 - `staticfiles/` — Collected static output (target of `collectstatic`).
-- `index.html` — Static reference version of the sheet (not Django-templated) for quick visual checks.
+- `backend/templates/account/login.html` — Minimal Google sign-in page (django-allauth).
 
 ## How rendering works
 1) Django view injects serialized character data as `data_json` plus fallback fields (character code/name/player/profession).
@@ -39,13 +39,17 @@ pgrep -af gunicorn
 ```
 
 ## Deployment / serving notes
-- Gunicorn is currently started manually (foreground). If you want a managed service, create a systemd unit or supervisor config that runs `../.venv/bin/gunicorn rowsite.wsgi:application --bind 127.0.0.1:8000` from `/var/www/forge.realmofwarriors.games/public_html/backend` and set `User=jeric` (or appropriate user).
-- Static files are served from `staticfiles/`; be sure your web server (e.g., nginx) points to that directory for `/static/` and `/images/` if proxying.
-- Add cache-busting on `js/sheet_embed.js` if browsers are sticky (e.g., `<script src="/js/sheet_embed.js?v=YYYYMMDDHHMM"></script>` in the template).
 
 ## Endpoints / URLs
-- Gunicorn bind: http://127.0.0.1:8000
-- Root `/` may 404 if not routed; use the Django view that renders the sheet embed (character-specific endpoint).
+
+## Authentication (Google via django-allauth)
+- Login URL: `/accounts/login/` (uses Google button).
+- Character views are `login_required`; unauthenticated users are redirected to login.
+- Secrets live in `/etc/relm.env` loaded by systemd:
+	- `GOOGLE_CLIENT_ID=`
+	- `GOOGLE_CLIENT_SECRET=`
+	- After editing: `sudo systemctl restart relm.service`
+- Configure Google OAuth: create a Web app client; add authorized redirect URI: `http(s)://<your-domain>/accounts/google/login/callback/`.
 
 ## Editing notes
 - Keep JS logic in `js/sheet_embed.js`; only bootstrapping stays inline in the template.

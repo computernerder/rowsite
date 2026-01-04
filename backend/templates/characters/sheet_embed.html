@@ -1,7 +1,7 @@
-<link rel="stylesheet" href="/blank_sheet.css">
+<link rel="stylesheet" href="/blank_sheet.css?v=20260104b">
 <div class="sheet-embed" style="margin:20px auto; max-width:850px;">
   <!-- ==================== PAGE 1 ==================== -->
-  <div class="page">
+    <div class="page page-notes">
     <div class="page-footer">
         <span class="footer-main">© 2026 MagiTomes LLC. Copying is permitted for personal use.</span>
         <span class="footer-tech">Datecode: <span class="footer-datecode" data-field="footer_datecode"></span> | Config: <span class="footer-config" data-field="footer_config"></span> | ID: <span class="footer-id" data-field="footer_id"></span></span>
@@ -20,28 +20,12 @@
                 </div>
             </div>
 
-            <div class="qr-box">
-                <img src="/characters/{{ character.code }}/qr/" alt="QR Code">
+            <div class="header-player">
+                <span class="label">Player</span>
+                <div class="player-value" data-field="player"></div>
             </div>
         </div>
         
-        <div class="info-inner">
-            <div class="section info-section">
-                <div class="section-title">Information</div>
-                <table class="header-grid info-grid">
-                    <tr>
-                        <td style="width:30%"><span class="label">Player</span><span class="value" data-field="player"></span></td>
-                        <td style="width:30%"><span class="label">Profession</span><span class="value" data-field="profession"></span></td>
-                        <td style="width:40%"><span class="label">Primary Path</span><span class="value" data-field="primary_path"></span></td>
-                    </tr>
-                    <tr>
-                        <td style="width:34%"><span class="label">Background</span><span class="value" data-field="background"></span></td>
-                        <td style="width:33%"><span class="label">Race</span><span class="value" data-field="race"></span></td>
-                        <td style="width:33%"><span class="label">Ancestry</span><span class="value" data-field="ancestry"></span></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
     </div>
 
     <!-- MAIN TWO-COLUMN LAYOUT -->
@@ -49,6 +33,22 @@
         <tr>
             <!-- LEFT COLUMN -->
             <td class="col-left">
+                <!-- INFORMATION -->
+                <div class="section info-section">
+                    <div class="section-title">Information</div>
+                    <table class="header-grid info-grid">
+                        <tr>
+                            <td><span class="label">Profession</span><span class="value" data-field="profession"></span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="label">Primary Path</span><span class="value" data-field="primary_path"></span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="label">Race / Ancestry / Background</span><span class="value" data-field="race_block"></span></td>
+                        </tr>
+                    </table>
+                </div>
+
                 <!-- ABILITY SCORES -->
                 <div class="section">
                     <div class="section-title">Ability Scores</div>
@@ -294,6 +294,7 @@
                             <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
                             <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
                             <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>&nbsp;</td><td></td><td></td><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -411,10 +412,12 @@
                     <div class="section-title">Languages</div>
                     <table class="inner lang-table" style="width:100%" data-list="languages">
                         <tbody>
-                            <tr><td></td></tr>
-                            <tr><td></td></tr>
-                            <tr><td></td></tr>
-                            <tr><td></td></tr>
+                            <tr><td></td><td></td></tr>
+                            <tr><td></td><td></td></tr>
+                            <tr><td></td><td></td></tr>
+                            <tr><td></td><td></td></tr>
+                            <tr><td></td><td></td></tr>
+                            <tr><td></td><td></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -480,15 +483,6 @@
         </tr>
     </table>
 
-    <!-- Sticky Notes across both columns -->
-    <div class="notes-sticky">
-        <div class="notes-inner">
-            <div class="section">
-                <div class="section-title">Notes</div>
-                <div class="text-area" style="min-height:120px" data-field="notes"></div>
-            </div>
-        </div>
-    </div>
   </div>
 
   <!-- ==================== PAGE 3 (DEFINITIONS / OVERFLOW) ==================== -->
@@ -580,11 +574,17 @@
             <td class="col-left" colspan="2">
                 <div class="section">
                     <div class="section-title">Notes</div>
-                    <div class="text-area" style="min-height:620px" data-field="notes"></div>
+                    <div class="notes-page-body">
+                        <div class="text-area notes-page-notes" style="min-height:620px" data-field="notes"></div>
+                    </div>
                 </div>
             </td>
         </tr>
     </table>
+
+    <div class="qr-box qr-box-notes">
+        <img src="/characters/{{ character.code }}/qr/" alt="QR Code">
+    </div>
   </div>
 </div>
 
@@ -597,4 +597,4 @@
         profession: "{{ character.profession|escapejs }}"
     };
 </script>
-<script src="/js/sheet_embed.js"></script>
+<script src="/js/sheet_embed.js?v=20260104c"></script>

@@ -204,10 +204,23 @@ body {
     margin-bottom: 0;
 }
 
+.header-player {
+    display: inline-block;
+    border: 2px solid #000;
+    background: rgba(255,255,255,0.9);
+    padding: 6px 12px;
+    min-width: 160px;
+    text-align: left;
+}
+
+.player-value {
+    font-size: 12pt;
+    font-weight: bold;
+    min-height: 18px;
+}
+
 .qr-box {
     position: absolute;
-    right: 0;
-    top: 0;
     width: 180px;
     height: 180px;
     border: 2px solid #000;
@@ -236,7 +249,8 @@ body {
 
 /* Information block (profession/path/race/etc.) */
 .info-section {
-    display: inline-block;
+    display: block;
+    width: 100%;
     text-align: left;
     padding-left: 7px;
     padding-right: 7px;
@@ -245,9 +259,10 @@ body {
 
 .info-inner {
     padding: 0 3px;
-    width: 75%;
+    width: 100%;
+    max-width: 100%;
     margin-left: 0;
-    margin-right: auto;
+    margin-right: 0;
 }
 
 .info-grid td {
@@ -512,6 +527,24 @@ table.inner th {
     padding: 0 3px;
 }
 .notes-sticky .section { margin-bottom: 0; }
+
+.notes-page-body {
+    position: relative;
+    min-height: 620px;
+}
+
+.notes-page-notes {
+    padding-right: 0;
+}
+
+.page-notes {
+    position: relative;
+}
+
+.qr-box-notes {
+    right: 12px;
+    bottom: 20px;
+}
 
 /* General utilities used to replace inline styles */
 .w-50p { width: 50%; }
