@@ -1,0 +1,3 @@
+[submodule "rowcharactersheet"]
+	path = rowcharactersheet
+	url = git@github.com:computernerder/rowcharactersheet.git
